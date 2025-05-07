@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.FindPrevPrime(5))
-	fmt.Println(piscine.FindPrevPrime(4))
+	fmt.Println(piscine.Itoa(12345))
+	fmt.Println(piscine.Itoa(0))
+	fmt.Println(piscine.Itoa(-1234))
+	fmt.Println(piscine.Itoa(987654321))
 }
