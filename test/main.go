@@ -6,8 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.Itoa(12345))
-	fmt.Println(piscine.Itoa(0))
-	fmt.Println(piscine.Itoa(-1234))
-	fmt.Println(piscine.Itoa(987654321))
+	fmt.Println(piscine.WeAreUnique("foo", "boo"))
+	fmt.Println(piscine.WeAreUnique("", ""))
+	fmt.Println(piscine.WeAreUnique("everyone", ""))
 }
