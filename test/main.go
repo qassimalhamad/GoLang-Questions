@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.WeAreUnique("foo", "boo"))
-	fmt.Println(piscine.WeAreUnique("", ""))
-	fmt.Println(piscine.WeAreUnique("everyone", ""))
+	fmt.Println(piscine.ZipString("YouuungFellllas"))
+	fmt.Println(piscine.ZipString("Thee quuick browwn fox juumps over the laaazy dog"))
+	fmt.Println(piscine.ZipString("Helloo Therre!"))
 }
