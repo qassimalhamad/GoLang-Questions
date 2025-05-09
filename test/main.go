@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.ZipString("YouuungFellllas"))
-	fmt.Println(piscine.ZipString("Thee quuick browwn fox juumps over the laaazy dog"))
-	fmt.Println(piscine.ZipString("Helloo Therre!"))
+	fmt.Println(piscine.ConcatSlice([]int{1, 2, 3}, []int{4, 5, 6}))
+	fmt.Println(piscine.ConcatSlice([]int{}, []int{4, 5, 6, 7, 8, 9}))
+	fmt.Println(piscine.ConcatSlice([]int{1, 2, 3}, []int{}))
 }
