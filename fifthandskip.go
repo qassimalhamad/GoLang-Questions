@@ -1,45 +1,41 @@
 package piscine
 
+import "strings"
+
 func FifthAndSkip(str string) string {
+	// If string is empty
 	if len(str) == 0 {
 		return "\n"
 	}
 
-	count := 0
-	for _, ch := range str {
-		if ch != ' ' {
-			count++
-		}
-	}
-	if count < 5 {
+	// Remove all spaces
+	str = strings.ReplaceAll(str, " ", "")
+
+	// Check if enough characters
+	if len(str) < 5 {
 		return "Invalid Input\n"
 	}
 
 	result := ""
-	letterCount := 0
-	blockCount := 0
+	count := 0
 
 	for i := 0; i < len(str); i++ {
-		if str[i] == ' ' {
-			continue
-		}
-
-		letterCount++
-
-		if letterCount%6 == 0 {
+		// Skip every 6th character
+		if (i+1)%6 == 0 {
 			continue
 		}
 
 		result += string(str[i])
-		blockCount++
+		count++
 
-		if blockCount == 5 {
+		// Add space every 5 characters
+		if count%5 == 0 {
 			result += " "
-			blockCount = 0
 		}
 	}
 
-	if len(result) > 0 && result[len(result)-1] == ' ' {
+	// Remove trailing space if any
+	if strings.HasSuffix(result, " ") {
 		result = result[:len(result)-1]
 	}
 

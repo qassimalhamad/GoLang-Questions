@@ -10,27 +10,27 @@ func main() {
 	if len(os.Args) != 3 {
 		return
 	}
-	s1 := os.Args[1]
-	s2 := os.Args[2]
+
+	str1 := os.Args[1]
+	str2 := os.Args[2]
 	seen := ""
 
-	for i := 0; i < len(s1); i++ {
-		char := s1[i]
+	for i := 0; i < len(str1); i++ {
+		char := str1[i]
 
 		repeated := false
 		for j := 0; j < len(seen); j++ {
-			if char == seen[i] {
+			if char == seen[j] {
 				repeated = true
 				break
 			}
 		}
-
 		if repeated {
 			continue
 		}
 		found := false
-		for j := 0; j < len(s2); j++ {
-			if char == s2[j] {
+		for k := 0; k < len(str2); k++ {
+			if char == str2[k] {
 				found = true
 				break
 			}

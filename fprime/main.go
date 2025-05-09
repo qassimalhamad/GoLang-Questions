@@ -12,7 +12,7 @@ func main() {
 	}
 
 	num, err := strconv.Atoi(os.Args[1])
-	if err != nil || num < 1 {
+	if err != nil || num <= 1 {
 		return
 	}
 
@@ -20,7 +20,7 @@ func main() {
 	for num > 1 {
 		if num%i == 0 {
 			fmt.Print(i)
-			num = num / i
+			num /= i
 			if num > 1 {
 				fmt.Print("*")
 			}

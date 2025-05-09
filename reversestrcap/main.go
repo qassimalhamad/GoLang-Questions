@@ -24,14 +24,12 @@ func main() {
 	if len(os.Args) < 2 {
 		return
 	}
-
 	for a := 1; a < len(os.Args); a++ {
 		arg := os.Args[a]
 
 		for i := 0; i < len(arg); i++ {
 			char := arg[i]
-
-			isLetter := (char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z')
+			isLetter := (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')
 			isLast := i == len(arg)-1 || arg[i+1] == ' ' || arg[i+1] == '\t'
 
 			if isLast && isLetter {
@@ -40,9 +38,9 @@ func main() {
 				z01.PrintRune(rune(toLower(char)))
 			}
 		}
-		if a < len(os.Args)-1 {
+		if len(arg)-1 > a {
 			z01.PrintRune(' ')
 		}
+		z01.PrintRune('\n')
 	}
-	z01.PrintRune('\n')
 }

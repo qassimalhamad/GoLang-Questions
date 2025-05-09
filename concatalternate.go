@@ -8,12 +8,10 @@ func ConcatAlternate(slice1, slice2 []int) []int {
 	if len(slice1) > len(slice2) {
 		longer = slice1
 		shorter = slice2
-	}
-	if len(slice2) > len(slice1) {
+	} else if len(slice2) > len(slice1) {
 		longer = slice2
 		shorter = slice1
-	}
-	if len(slice1) == len(slice2) {
+	} else {
 		for i := 0; i < len(slice1); i++ {
 			result = append(result, slice1[i], slice2[i])
 		}

@@ -1,25 +1,23 @@
 package piscine
 
 func SaveAndMiss(arg string, num int) string {
-	if num <= 0 {
+	if num < 0 || num == 0 {
 		return arg
 	}
 
-	result := ""
 	save := true
-	counter := 0
+	count := 0
+	result := ""
 	for i := 0; i < len(arg); i++ {
-
 		if save {
 			result += string(arg[i])
 		}
-		counter++
+		count++
 
-		if num == counter {
+		if count == num {
 			save = !save
-			counter = 0
+			count = 0
 		}
-
 	}
 	return result
 }

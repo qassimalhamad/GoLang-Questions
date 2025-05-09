@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"os"
+
+	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -10,19 +11,20 @@ func main() {
 		return
 	}
 
-	s1 := os.Args[1]
-	s2 := os.Args[2]
+	str1 := os.Args[1]
+	str2 := os.Args[2]
 
 	i := 0
-
-	for j := 0; j < len(s2); j++ {
-		if i < len(s1) && s1[i] == s2[j] {
+	for j := 0; j < len(str2); j++ {
+		if i < len(str1) && str1[i] == str2[j] {
 			i++
 		}
 	}
 
-	if i == len(s1) {
-		fmt.Print(s1)
+	if i == len(str1) {
+		for k := 0; k < len(str1); k++ {
+			z01.PrintRune(rune(str1[k]))
+		}
 	}
-	fmt.Println()
+	z01.PrintRune('\n')
 }
