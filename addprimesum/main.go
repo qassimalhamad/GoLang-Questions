@@ -6,20 +6,15 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func isDigit(r byte) bool {
-	return r >= '0' && r <= '9'
-}
-
 func toInt(s string) int {
-	result := 0
+	n := 0
 	for i := 0; i < len(s); i++ {
-		if isDigit(s[i]) {
-			result = result*10 + int(s[i]-'0')
-		} else {
-			return -1 // invalid input
+		if s[i] < '0' || s[i] > '9' {
+			return -1
 		}
+		n = n*10 + int(s[i]-'0')
 	}
-	return result
+	return n
 }
 
 func isPrime(n int) bool {
@@ -35,11 +30,7 @@ func isPrime(n int) bool {
 }
 
 func printNumber(n int) {
-	if n == 0 {
-		z01.PrintRune('0')
-		return
-	}
-	if n/10 > 0 {
+	if n >= 10 {
 		printNumber(n / 10)
 	}
 	z01.PrintRune(rune(n%10 + '0'))
@@ -53,7 +44,7 @@ func main() {
 	}
 
 	num := toInt(os.Args[1])
-	if num <= 0 {
+	if num < 0 {
 		z01.PrintRune('0')
 		z01.PrintRune('\n')
 		return
